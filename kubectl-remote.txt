@@ -1,0 +1,25 @@
+Installer kubectl sur Linux
+Installer le binaire de kubectl avec curl sur Linux
+
+    Téléchargez la dernière release avec la commande :
+
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+
+    Rendez le binaire kubectl exécutable.
+
+    chmod +x ./kubectl
+
+    Déplacez le binaire dans votre PATH.
+
+    sudo mv ./kubectl /usr/local/bin/kubectl
+
+    Testez pour vous assurer que la version que vous avez installée est à jour:
+
+    kubectl version --client
+
+Récupérer conf du master:
+
+    vagrant port k8s-master
+    scp -r -P 2222 vagrant@127.0.0.1:/home/vagrant/.kube .
+    cp -r .kube $HOME/
+
