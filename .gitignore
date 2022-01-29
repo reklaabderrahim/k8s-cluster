@@ -1,4 +1,5 @@
 .vagrant/
+.kube
 .private/
 *-join-command
 *.log
